@@ -1,0 +1,416 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright Hsin-Yi Chen (hychen) <ossug.hychen@gmail.com>
+# Generated from files:
+#  coscup_sponsorship.module: n/a
+#  coscup_sponsorship.install: n/a
+#  coscup_sponsorship.info: n/a
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2010-04-19 19:18+0800\n"
+"PO-Revision-Date: 2010-04-19 21:03+0800\n"
+"Last-Translator: Hsin-Yi Chen (hychen) <ossug.hychen@gmail.com>\n"
+"Language-Team:  Tranditional Chinese<ossug.hychen@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
+
+#: coscup_sponsorship.module:38
+msgid "Company Name"
+msgstr "公司名稱"
+
+#: coscup_sponsorship.module:42
+msgid "Basic Information"
+msgstr "基本資料"
+
+#: coscup_sponsorship.module:42
+msgid ""
+"If you can not determine all the questions, please feel free to just submit "
+"the questions you can answer, and come later for the rest questions."
+msgstr ""
+"如果您還未能決定答案，請先提交部份可以作答的部份，剩下的問題可以稍候使用同一"
+"網址繼續填寫。"
+
+#: coscup_sponsorship.module:46
+msgid "Vendor ID"
+msgstr "Vendor ID"
+
+#: coscup_sponsorship.module:54
+msgid "Please check the sponsorship level that you'd like to take."
+msgstr "請選擇贊助等級"
+
+#: coscup_sponsorship.module:59
+msgid "Sponsorship Level"
+msgstr "贊助等級"
+
+#: coscup_sponsorship.module:60
+msgid "Diamond"
+msgstr "鑽石"
+
+msgid "Silver"
+msgstr "白銀"
+
+#: coscup_sponsorship.module:60
+msgid "Gold"
+msgstr "黃金"
+
+#: coscup_sponsorship.module:60
+msgid "Bronze"
+msgstr "青銅"
+
+#: coscup_sponsorship.module:66
+msgid "Contact Information"
+msgstr "聯絡資訊"
+
+#: coscup_sponsorship.module:67
+msgid ""
+"Please specify email, phone, names of the contact window from your company."
+msgstr "請填寫貴公司聯絡窗口的電子郵件、電話以及姓名。"
+
+#: coscup_sponsorship.module:75
+msgid "Sponsorship Fee"
+msgstr "贊助金額"
+
+#: coscup_sponsorship.module:78
+msgid ""
+"<p>Please wire transfer your sponsor fee to the COSCUP account managed by 歐"
+"斯邁德資訊有限公司 and notify sponsorship@coscup.org the account number you "
+"used to wire the fee by July 30.</p>"
+msgstr ""
+"<p>請電匯您的贊助款給 COSCUP 的代理公司「歐斯邁德資訊有限公司」，並請於 7/30 前"
+"知會 sponsorship@coscup.org 您的匯款款項。</p>"
+
+#: coscup_sponsorship.module:79
+msgid "The invoice will be issued by 歐斯邁德資訊有限公司."
+msgstr "發票將由歐斯邁德資訊有限公司開立。"
+
+#: coscup_sponsorship.module:80
+msgid ""
+"<p>Please be reminded that sponsors within the same level are listed "
+"according to the time that the sponsor fee is received. <b>Wiring it earlier "
+"gets you a better position.</b></p>"
+msgstr ""
+"<p>請注意！同一等級的贊助者排列順序由收到贊助費的時間決定，越早付款將取得更好"
+"的行銷位置。</p>"
+
+#: coscup_sponsorship.module:81
+msgid "<p>The COSCUP account is as follows.</p>"
+msgstr "<p>COSCUP 銀行帳號如下<p>"
+
+#: coscup_sponsorship.module:82
+msgid ""
+"<p><ul>\n"
+"<li>Bank Name: 華南銀行</li> \n"
+"<li>Bank Branch: 東台南分行</li>\n"
+"<li>Bank Code: 008</li>\n"
+"<li>Back Address: 台南市東區林森路二段90號</li>\n"
+"<li>Back Phone Number: +886-6-2747027</li>\n"
+"\n"
+"<li>Account Name: 歐斯邁德資訊有限公司 </li>\n"
+"<li>Bank Account Number: 642-10-021455-3</li>\n"
+"<li>SWIFT CODE: </li></ul></p><br>"
+msgstr ""
+"<p><ul>\n"
+"<li>銀行名稱: 華南銀行</li> \n"
+"<li>分行名稱: 東台南分行</li>\n"
+"<li>銀行代號: 008</li>\n"
+"<li>銀行地址: 台南市東區林森路二段90號</li>\n"
+"<li>銀行電話: +886-6-2747027</li>\n"
+"\n"
+"<li>帳戶名: 歐斯邁德資訊有限公司 </li>\n"
+"<li>銀行帳號: 642-10-021455-3</li>\n"
+"<li>SWIFT CODE: </li></ul></p><br>"
+
+#: coscup_sponsorship.module:92
+msgid "<p>Please fill out the information needed for the invoice below.</p>"
+msgstr "請填寫發票所需要的資訊。"
+
+#: coscup_sponsorship.module:97
+msgid "Invoice Title"
+msgstr "發票公司名稱"
+
+msgid "Product name on the invoice"
+msgstr "品名名目"
+
+msgid "Amount (with tax)"
+msgstr "含稅總價"
+
+#: coscup_sponsorship.module:102
+msgid "Unified Serial Number"
+msgstr "統一編號"
+
+#: coscup_sponsorship.module:107
+msgid "Address"
+msgstr "地址"
+
+#: coscup_sponsorship.module:112
+msgid "Account information you used to wire"
+msgstr "電匯付款之帳號資料"
+
+#: coscup_sponsorship.module:121
+msgid "Promotion your company."
+msgstr "行銷貴公司"
+
+#: coscup_sponsorship.module:122
+msgid ""
+"<p>Please fill the following form for information related to promotion of "
+"your company or organization.</p>"
+msgstr "<p>請填寫以下關於貴公司或組織的資訊"
+
+#: coscup_sponsorship.module:126
+msgid ""
+"<p>The English company name you want to be displayed on sponsor page, pre-"
+"event e-mails and marketing announcements.</p>"
+msgstr "<p>顯示在贊助者頁面、會前通知郵件、活動宣傳的英文公司名稱。</p>"
+
+#: coscup_sponsorship.module:128
+msgid "English Name"
+msgstr "英文公司名稱"
+
+#: coscup_sponsorship.module:132
+msgid "Chinese Name"
+msgstr "中文公司名稱"
+
+#: coscup_sponsorship.module:133
+msgid ""
+"<p>The Chinese company name you want to be displayed on sponsor page, pre-"
+"event e-mails and marketing announcements.</p>"
+msgstr "<p>顯示在贊助者頁面、會前通知郵件、活動宣傳的中文公司名稱。</p>"
+
+#: coscup_sponsorship.module:137
+msgid "The logo to be shown on conference web site:"
+msgstr "顯示在活動網站上的商標圖示"
+
+#: coscup_sponsorship.module:138
+msgid ""
+"The logo should be a EPS/SVG/AI/PDF file, or transparent PNG/TIFF/PSD files "
+"with a resolution of 178 pixels wide times 72 pixels high."
+msgstr ""
+"圖示檔案請提供 EPS/SVG/AI/PDF 檔案。或透明 PNG/TIFF/PSD 檔案，解析度為 178 "
+"pixels 寬 72 pixels 高。"
+
+#: coscup_sponsorship.module:139
+msgid ""
+"If your company has strict rules on CI, please email us your visual guide."
+msgstr "如果貴公司有商標的規範，請另外將視覺規定寄給我們。"
+
+#: coscup_sponsorship.module:145
+msgid "Logo"
+msgstr "商標"
+
+#: coscup_sponsorship.module:151
+msgid "URL"
+msgstr "網址"
+
+#: coscup_sponsorship.module:152
+msgid "<p>The URL that the displayed logo should be linked to</p>"
+msgstr "<p>商標的網址應連結的公司網址</p>"
+
+#: coscup_sponsorship.module:157
+msgid "English Description"
+msgstr "英文說明"
+
+#: coscup_sponsorship.module:158
+msgid ""
+"An text in English to describe your company profile, up to 500 characters."
+msgstr "五百字內，英文公司基本簡介"
+
+#: coscup_sponsorship.module:163
+msgid "Chinese Description"
+msgstr "中文說明"
+
+#: coscup_sponsorship.module:164
+msgid ""
+"An text in Chinese to describe your company profile, up to 500 characters."
+msgstr "五百字內，中文公司基本簡介"
+
+#: coscup_sponsorship.module:170
+msgid "Booth"
+msgstr "攤位"
+
+#: coscup_sponsorship.module:170
+msgid "<p>Do you need a booth?</p>"
+msgstr "<p>貴公司是否需要攤位?</p>"
+
+#: coscup_sponsorship.module:175
+msgid "Plan for Booth?"
+msgstr "攤位規劃"
+
+#: coscup_sponsorship.module:175
+msgid ""
+"<p>If you need a booth, please be so kind to tell us your current plan of "
+"using the booth and your requirements on the facilities. Allowed usages are</"
+"p>"
+msgstr ""
+"<p>若您需要攤位，請告知我們您目前的攤位規劃與設備需求，大會容許的應用方式有</p>"
+
+#: coscup_sponsorship.module:178
+msgid ""
+"promoting your products - best if they are open source related for maximum "
+"acceptance by audiences"
+msgstr "推廣您的產品 - 產品請盡量為開放原碼相關，以大部分聽眾所能接受為佳。"
+
+#: coscup_sponsorship.module:179
+msgid "recruiting"
+msgstr "招募新人"
+
+#: coscup_sponsorship.module:180
+msgid "giving out souvenirs"
+msgstr "贈予紀念品"
+
+#: coscup_sponsorship.module:181
+msgid "collecting contact information from audience with their consent"
+msgstr "在聽眾同意下，收集他門的得聯絡資訊"
+
+#: coscup_sponsorship.module:182
+msgid "displaying posters"
+msgstr "張貼海報"
+
+#: coscup_sponsorship.module:183
+msgid "other activities upon negotiation."
+msgstr "其他事情，需與大會協議"
+
+#: coscup_sponsorship.module:189
+msgid "Requirements on the facilities:"
+msgstr "設備需求"
+
+#: coscup_sponsorship.module:190
+msgid "Electricity"
+msgstr "電力"
+
+#: coscup_sponsorship.module:193
+msgid "Please specify number of sockets"
+msgstr "請填寫需要的電源插座數目"
+
+#: coscup_sponsorship.module:198
+msgid "WiFi"
+msgstr "無線網路"
+
+#: coscup_sponsorship.module:201
+msgid "Please specify number of devices you will use"
+msgstr "請填寫貴公司將會使用 WiFi 的裝置數目"
+
+#: coscup_sponsorship.module:207
+msgid "Other requirement"
+msgstr "其他需求"
+
+#: coscup_sponsorship.module:208
+msgid "Please specify other facilities you will need."
+msgstr "請填寫貴公司需要的其他設備"
+
+#: coscup_sponsorship.module:208
+msgid ""
+"The COSCUP organizing committee will do our best to allocate a booth for "
+"you, but please be reminded that space is limited. We may not be able to "
+"accommodate late requests."
+msgstr ""
+"COSCUP 籌備單位會盡力安排攤位給貴公司，但由於空間有限，若太晚提出需求，我們仍"
+"可能無法滿足貴公司。"
+
+#: coscup_sponsorship.module:214
+msgid "Plenary and Technical Talk"
+msgstr "大會與技術演講"
+
+#: coscup_sponsorship.module:214
+msgid ""
+"A technical talk is 25 minutes in length, up to minor adjustments by program "
+"committee as the program is finalized. If you like to give a plenary talk, please e-email sponsorship@coscup.org for details."
+msgstr "一場技術演講原則為 25 分鐘，議程委員將保有最後調整的權利整。若您想提供大會演講，請發信至 sponsorship@coscup.org 討論演講細節。"
+
+#: coscup_sponsorship.module:219
+msgid "Do you want to give a technical talk?"
+msgstr "貴公司是否想要提供技術演講?"
+
+#: coscup_sponsorship.module:219
+msgid ""
+" The talk slots are limited. The program committee may not be able to "
+"accommodate late requests. Please e-mail sponsorship@coscup.org if you want "
+"to decide later."
+msgstr ""
+"演講場次有限，議程委員可能無法滿足太晚的要求。若您一時無法決定是否要提供演講，請發信告知 sponsorship@coscup.org。"
+
+#: coscup_sponsorship.module:228
+msgid ""
+"Due to the nature of the conference, your talk must be about or closely "
+"related to open source software."
+msgstr "由於會議本質，貴公司的演講必須關於開放原碼軟體或相關議題。"
+
+#: coscup_sponsorship.module:229
+msgid ""
+"The COSCUP Program Committee reserves the right to negotiate the topic of "
+"your talk or reject your talk."
+msgstr "COSCUP 議程組委員會保留接收，或是拒絕貴公司演講的權力。"
+
+#: coscup_sponsorship.module:230
+msgid ""
+"If your talk is unfortunately rejected by the COSCUP Program Committe, we'll "
+"have to decline your sponsorship."
+msgstr "若提出的演講遭議程委員會拒絕，我們將必須婉拒貴公司的贊助。"
+
+#: coscup_sponsorship.module:232
+msgid "To unerstand on expectation of our audience, please visit our "
+msgstr "欲了解本會議聽眾的調性，請參閱我們的 "
+
+#: coscup_sponsorship.module:233
+msgid ""
+"If you decide to give a technical talk, please fill the information below:"
+msgstr "若貴公司考慮給予技術演講，請填寫下列資訊："
+
+#: coscup_sponsorship.module:238
+msgid "Speaker's Name"
+msgstr "演講者名稱"
+
+#: coscup_sponsorship.module:244
+msgid "Speaker's job title"
+msgstr "演講者職銜"
+
+#: coscup_sponsorship.module:251
+msgid "Title of the talk"
+msgstr "演講名稱"
+
+#: coscup_sponsorship.module:257
+msgid "Abstract of the talk"
+msgstr "演講摘要"
+
+#: coscup_sponsorship.module:258
+msgid "up to 500 characters in either English or Chinese"
+msgstr "500字 以上，中英文撰寫皆可。"
+
+#: coscup_sponsorship.module:263
+msgid "Conference Passes"
+msgstr "會議通行證"
+
+#: coscup_sponsorship.module:264
+msgid ""
+"Please provide below the names and job titles of the participants to get "
+"their names shown on the passes. Company name will be shown on the passes "
+"regardless."
+msgstr "請提供參加者的姓名及職銜，以便印製於通行證上。或預設將僅標示公司名稱。"
+
+#: coscup_sponsorship.module:272
+msgid "Submit"
+msgstr "提交"
+
+#: coscup_sponsorship.module:347
+msgid "The form has been submitted."
+msgstr "表單已提交成功。"
+
+#: coscup_sponsorship.module:8
+msgid "Sponsorship Form"
+msgstr "贊助者表單"
+
+#: coscup_sponsorship.module:9
+msgid "COSCUP sponsorship form"
+msgstr "COSCUP 贊助者表單"
+
+#: (duplicate) coscup_sponsorship.install:13 coscup_sponsorship.info:0
+msgid "COSCUP Sponsorship Form"
+msgstr "COSCUP 贊助者表單"
+
+#: coscup_sponsorship.info:0
+msgid "A simple form to cllection sponsor's information."
+msgstr "蒐集贊者者資訊用的表單"

@@ -1,0 +1,6 @@
+; $Id$
+name = COSCUP Sponsorship Form
+description = A simple form to cllection sponsor's information.
+core = 6.x
+
+; dependencies[] = taxonomy

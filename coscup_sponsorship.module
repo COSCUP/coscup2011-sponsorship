@@ -1,0 +1,370 @@
+<?php
+// $Id$
+
+function coscup_sponsorship_menu() {
+  $items = array();
+
+  $items['coscup_sponsorship/form'] = array(
+    'title' => 'Sponsorship Form',
+    'description' => 'COSCUP sponsorship form',
+    'page callback' => 'coscup_sponsorship_form',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+function coscup_sponsorship_form($vid = '') {
+   if(strlen($vid) == 0)
+   {
+      // TODO send an error.
+      die ("Bad acccess");
+   }
+   return drupal_get_form('sponsorship_form', $vid);
+}
+
+function sponsorship_form($form, $vid) {
+   // load data from database with $vid
+   $result = db_query('SELECT * FROM {coscup_sponsorship} WHERE vid = "%s" ORDER BY ID DESC LIMIT 1', $vid);
+   $values = db_fetch_array($result);
+     
+   $form= array();
+      
+   $form['#attributes'] = array(
+      'enctype' => 'multipart/form-data'
+   );
+
+   $form['name'] = array(
+     '#title' => t('Company Name'),
+     '#type' => 'textfield',
+     '#weight' => '0',
+     '#required' => '1',
+     '#prefix' => '<h1>' . t('Basic Information') . '</h1><p>'.t('If you can not determine all the questions, please feel free to just submit the questions you can answer, and come later for the rest questions.'). '</p>',
+   );
+
+   $form['vid'] = array(
+     '#title' => t('Vendor ID'),
+     '#type' => 'hidden',
+     '#default_value' => $vid,
+     '#required' => '0',
+   );
+
+	$form['level'] = array(
+        '#multiple' => '1',
+        '#description' => t('Please check the sponsorship level that you\'d like to take.'),
+        '#required' => '1',
+        '#weight' => '10',
+        '#default_value' => variable_get('level', 3),
+   	  '#type' => 'radios',
+   	  '#title' => t('Sponsorship Level'),
+   	  '#options' => array( t('Diamond'), t('Gold'), t('Silver'), t('Bronze')),
+	);
+	
+   $form['contact'] = array(
+      '#type'=> 'textarea',
+      '#weight' => '15',
+      '#title' => t('Contact Information'),
+      '#description' => t('Please specify email, phone, names of the contact window from your company.'),
+   );   
+
+	$form['fee'] = array(
+	  '#weight' => '20',
+	  '#collapsed' => '',
+	  '#type' => 'fieldset',
+	  '#collapsible' => '0',
+	  '#prefix' => '<h1>' . t('Sponsorship Fee') . '</h1>',
+	  '#title' => '',
+	  '#description' => 
+	  t('<p>Please wire transfer your sponsor fee to the COSCUP account managed by 歐斯邁德資訊有限公司 and notify sponsorship@coscup.org the account number you used to wire the fee by July 30.</p>') 
+	  . '<p>' . t('The invoice will be issued by 歐斯邁德資訊有限公司.') . '</p>'
+	  . t('<p>Please be reminded that sponsors within the same level are listed according to the time that the sponsor fee is received. <b>Wiring it earlier gets you a better position.</b></p>')
+	  . t('<p>The COSCUP account is as follows.</p>')
+     . t('<p><ul>
+<li>Bank Name: 華南銀行</li> 
+<li>Bank Branch: 東台南分行</li>
+<li>Bank Code: 008</li>
+<li>Back Address: 台南市東區林森路二段90號</li>
+<li>Back Phone Number: +886-6-2747027</li>
+
+<li>Account Name: 歐斯邁德資訊有限公司 </li>
+<li>Bank Account Number: 642-10-021455-3</li>
+<li>SWIFT CODE: </li></ul></p><br>')
+     .t('<p>Please fill out the information needed for the invoice below.</p>')
+	  ,
+	);
+	
+	$form['fee']['invoice'] = array(
+     '#title' => t('Invoice Title'),
+     '#type' => 'textfield',
+	);
+	
+   $form['fee']['usn'] = array(
+     '#size' => '8',
+     '#title' => t('Unified Serial Number'),
+     '#type' => 'textfield',   
+   );
+   
+   $form['fee']['invoicename'] = array(
+     '#title' => t('Product name on the invoice'),
+     '#type' => 'textfield',   
+   );
+   
+  $form['fee']['invoiceamount'] = array(
+     '#title' => t('Amount (with tax)'),
+     '#type' => 'textfield',   
+   );
+      
+   
+   $form['fee']['address'] = array(
+     '#title' => t('Address'),
+     '#type' => 'textfield',
+   );
+ 	$form['fee']['account'] = array(
+    '#default_value' => "Date: \nBank: \nAccount Number: \nAmount: ",
+    '#title' => t('Account information you used to wire'),
+    '#type' => 'textarea',
+  );
+  
+	$form['promoption'] = array(
+	  '#weight' => '30',
+	  '#collapsed' => '0',
+	  '#collapsible' => '0',
+	  '#type' => 'fieldset',
+	  '#prefix' => '<h1>' . t('Promotion your company.') . '</h1>',
+	  '#description' => t('<p>Please fill the following form for information related to promotion of your company or organization.</p>'),
+	);
+
+   $form['promoption']['english_name'] = array(
+    '#description' => t('<p>The English company name you want to be displayed on sponsor page, pre-event e-mails and marketing announcements.</p>'),
+    '#type' => 'textfield',
+    '#title' => t('English Name'),
+  );
+
+   $form['promoption']['chinese_name'] = array(
+    '#title' => t('Chinese Name'),
+    '#description' => t('<p>The Chinese company name you want to be displayed on sponsor page, pre-event e-mails and marketing announcements.</p>'),
+    '#type' => 'textfield',
+  );
+
+  $description = '<p>' . t('The logo to be shown on conference web site:') .
+  t('The logo should be a EPS/SVG/AI/PDF file, or transparent PNG/TIFF/PSD files with a resolution of 178 pixels wide times 72 pixels high.') . '</p>' .
+  '<p>' . t('If your company has strict rules on CI, please email us your visual guide.') . '</p>';
+  if(strlen($values['logourl']) > 0) {
+     $description .= 'Download <a href="/' . $values['logourl'] . '">current file.</a>';
+  }
+ 
+   $form['promoption']['logo'] = array(
+    '#title' => t('Logo'),
+    '#description' => $description,
+    '#type' => 'file',
+  );
+  
+   $form['logourl'] = array(
+     '#title' => t('Logo URL'),
+     '#type' => 'hidden',
+     '#required' => '0',
+   );
+  
+  $form['promoption']['url'] = array(
+    '#title' => t('URL'),
+    '#description' => t('<p>The URL that the displayed logo should be linked to</p>'),
+    '#type' => 'textfield',
+  );  
+
+  $form['promoption']['englishdescription'] = array(
+    '#title' => t('English Description'),
+    '#description' => '<p>' . t('An text in English to describe your company profile, up to 500 characters.') . "</p>",
+    '#type' => 'textarea',
+  );  
+  
+   $form['promoption']['chinesedescription'] = array(
+    '#title' => t('Chinese Description'),
+    '#description' => '<p>' . t('An text in Chinese to describe your company profile, up to 500 characters.') . "</p>",
+    '#type' => 'textarea',
+  );  
+  
+    
+  $form['promoption']['booth'] = array(
+    '#prefix' => t('Booth') . t('<p>Do you need a booth?</p>'),
+    '#type' => 'checkbox',
+  );
+    
+   $form['promoption']['boothplan'] = array(
+    '#title' => t('Plan for Booth?') . t('<p>If you need a booth, please be so kind to tell us your current plan of using the booth and your requirements on the facilities. Allowed usages are</p>'),
+    '#type' => 'checkboxes',
+    '#options' => array(
+        'promopte' => t('promoting your products - best if they are open source related for maximum acceptance by audiences'),
+        'recruiting' => t('recruiting'), 
+        'souvenirs' => t('giving out souvenirs'), 
+        'collect' => t('collecting contact information from audience with their consent'),
+        'posters' => t('displaying posters'),
+        'other' => t('other activities upon negotiation.'),
+     ),
+   );
+
+   $form['promoption']['electricity'] = array(
+      '#type'=> 'textfield',
+      '#prefix' => t('Requirements on the facilities:'),
+      '#title' => t('Electricity'),
+      '#default_value' => 0,
+      '#size' => 2,
+      '#description' => t('Please specify number of sockets'),
+   );   
+   
+   $form['promoption']['wifi'] = array(
+      '#type'=> 'textfield',
+      '#title' => t('WiFi'),
+      '#default_value' => 0,
+      '#size' => 2,
+      '#description' => t('Please specify number of devices you will use'),
+   );   
+
+   
+   $form['promoption']['requirements'] = array(
+      '#type'=> 'textarea',
+      '#title' => t('Other requirement'),
+      '#description' => t('Please specify other facilities you will need.') . "<br /><br /><br />" . t('The COSCUP organizing committee will do our best to allocate a booth for you, but please be reminded that space is limited. We may not be able to accommodate late requests.'),
+   );     
+  
+   $form['ttalk'] = array(
+      '#type'=> 'markup',
+      '#weight' => 40,
+      '#value' => '<h1>' . t('Plenary and Technical Talk') . '</h1><p>' . t('A technical talk is 25 minutes in length, up to minor adjustments by program committee as the program is finalized. If you like to give a plenary talk, please e-email sponsorship@coscup.org for details.') . '</p>',
+   );
+   
+   $form['technical_talk'] = array(
+    '#type' => 'checkbox',
+    '#description' => t('Do you want to give a technical talk?') . '<br /><br />' . t(' The talk slots are limited. The program committee may not be able to accommodate late requests. Please e-mail sponsorship@coscup.org if you want to decide later.'),
+    '#weight' => 41,
+   );
+   
+   $form['ttalk_note'] = array(
+      '#type'=> 'markup',
+      '#weight' => 42,
+      '#prefix' => '<p>',
+      '#surrfix' => '</p>',
+      '#value' =>  t("Due to the nature of the conference, your talk must be about or closely related to open source software.") . 
+      t("The COSCUP Program Committee reserves the right to negotiate the topic of your talk or reject your talk.") .
+      t("If your talk is unfortunately rejected by the COSCUP Program Committe, we'll have to decline your sponsorship.") .
+      "<br /><br />" .
+      t("To unerstand on expectation of our audience, please visit our ") . "<a href=http://wiki.coscup.org/memo-for-speaker-2010>wiki</a>." . "</p><p>".
+      t("If you decide to give a technical talk, please fill the information below:"),
+   );
+   
+   $form['speakername'] = array(
+      '#type'=> 'textfield',
+      '#title' => t('Speaker\'s Name'),
+      '#weight' => 50,
+   );   
+
+   $form['speakertitle'] = array(
+      '#type'=> 'textfield',
+      '#title' => t('Speaker\'s job title'),
+      '#weight' => 51,
+   );   
+
+
+   $form['talktitle'] = array(
+      '#type'=> 'textfield',
+      '#title' => t('Title of the talk'),
+      '#weight' => 52,
+   );   
+   
+   $form['talkabstract'] = array(
+      '#type'=> 'textarea',
+      '#title' => t('Abstract of the talk'),
+      '#description' => t('up to 500 characters in either English or Chinese'),
+      '#weight' => 53,
+   );   
+   
+   $form['passes'] = array(
+      '#title' => "<h1>".t('Conference Passes')."</h1>",
+      '#description' => t('Please provide below the names and job titles of the participants to get their names shown on the passes. Company name will be shown on the passes regardless.'),
+      '#type'=> 'textarea',
+      '#default_value' => "Name: \nTitle: \n\nName: \nTitle: \n\nName: \nTitle: \n\n",
+      '#weight' => 60,
+   );
+  
+   $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Submit'),
+    '#weight' => '99',
+   );
+   
+   $form['#redirect'] = "thanks";
+
+   // populated the data. 
+   if($values) {
+      // print_r($values);
+      foreach ($values as $k => $v){
+         if(!empty($form[$k])) {
+            $form[$k]['#default_value'] = $v;
+         }
+         if(!empty($form['fee'][$k])) {
+            $form['fee'][$k]['#default_value'] = $v;
+         }
+         if(!empty($form['promoption'][$k])) {
+            $form['promoption'][$k]['#default_value'] = $v;
+         }
+      }
+      $form['vid']['#default_value'] = $values['vid'];
+      $form['promoption']['boothplan']['#default_value'] = explode(",",$values['boothplan']);
+   } 
+   
+	return $form;
+}
+
+function sponsorship_form_validate($form, &$form_state) {
+}
+
+function sponsorship_form_submit($form, &$form_state) {   
+   // print_r($form_state['values']);
+   // print_r($form_state);
+
+   // Save all informatoin
+   $values = $form_state['values'];
+   $file = file_save_upload("logo", array(), file_create_path(file_directory_path() . '/' . "logos"));
+   if(!empty($file)) {
+       $values['logourl'] = $file->filepath;
+   }
+   $values['boothplan'] = implode(",", $form_state['values']['boothplan']);
+   drupal_write_record('coscup_sponsorship', $values);
+   
+   // for update the record
+   // drupal_write_record('coscup_sponsorship', $form_state['values'], 'id');
+
+   // send an diff email to sponsorship@coscup.org
+   $body = '';
+   $form = $form_state;
+   if(!empty($form['promoption']['boothplan']['#default_value'])) {
+      $form['promoption']['boothplan']['#default_value'] = implode(",", $form['promoption']['boothplan']['#default_value']);
+   }
+   if($values) {
+      foreach ($values as $k => $v){
+         if(!empty($form[$k]) && $form[$k]['#default_value'] != $values[$k]) {
+            $body .= sprintf("* %s changed \n-from %s\n-to %s\n\n", $k, $form[$k]['#default_value'], $values[$k]);
+         }
+         if(!empty($form['fee'][$k]) && ($form['fee'][$k]['#default_value'] != $values[$k])) {
+            $body .= sprintf("* %s changed \n-from %s\n-to %s\n\n", $k, $form['fee'][$k]['#default_value'], $values[$k]);
+         }
+         if(!empty($form['promoption'][$k]) && ($form['promoption'][$k]['#default_value'] != $values[$k])) {
+            $body .= sprintf("* %s changed \n-from %s\n-to %s\n\n", $k, $form['promoption'][$k]['#default_value'], $values[$k]);
+         }
+      }
+   } 
+      
+   $body .= "See http://sponsor.coscup.org/coscup_sponsorship/form/" . $form_state['values']['vid'];
+   $message = array(
+     'to' => 'sponsorship@coscup.org',
+     'subject' => '[COSCUP][SPONSOR] New update from ' . $form_state['values']['name'],
+     'body' => $body,
+     'headers' => array('From' => 'Sponsor@COSCUP.org'),
+   );
+   drupal_mail_send($message);
+
+   // redirect to Thanks page.
+   // $form_state['redirect'] = "thanks";
+   drupal_set_message(t('The form has been submitted.'));
+}
+
+?>

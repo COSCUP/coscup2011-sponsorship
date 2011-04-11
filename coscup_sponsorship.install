@@ -1,0 +1,78 @@
+<?php
+// $Id$
+
+/**
+ * Implementation of hook_requirements().
+ */
+function coscup_sponsorship_requirements($phase) {
+  $requirements = array();
+  $t = get_t();
+
+  if ($phase == 'runtime') {
+    $requirements['coscup_sponsorship'] = array(
+      'title' => $t('COSCUP Sponsorship Form'),
+      'severity' => REQUIREMENT_OK,
+      // 'value' => jquery_update_get_version(),
+    );
+  }
+
+  return $requirements;
+}
+
+/**
+ * Implementation of hook_schema().
+ */
+function coscup_sponsorship_schema() {
+   $schema = array();
+   $schema['coscup_sponsorship'] = array(
+      'description' => 'The base table for nodes.',
+      'fields' => array(
+         'id' => array('description' => 'The primary identifier for a node.', 'type' => 'serial', 'unsigned' => TRUE, 'not null' => TRUE),
+        
+           'vid' => array('description' => 'Unique Vendor id.', 'type' => 'text', 'size' => 'small', 'default' => '', 'not null' => TRUE),
+           
+           'name' => array('description' => '', 'type' => 'text', 'size' => 'small', 'default' => '', 'not null' => TRUE),
+           'level' => array( 'description' => '', 'type' => 'text', 'size' => 'normal', 'default' => ''),           
+           'contact' => array( 'description' => '', 'type' => 'text', 'size' => 'normal', 'default' => ''),
+           
+           'invoice' => array('description' => '','type' => 'text', 'size' => 'normal', 'default' => ''),  
+           'usn' => array('description' => '', 'type' => 'text', 'size' => 'small', 'default' => ''),  
+           'invoicename' => array('description' => '', 'type' => 'text', 'size' => 'normal', 'default' => ''),
+           'invoiceamount' => array('description' => '', 'type' => 'text', 'size' => 'normal', 'default' => ''),                         
+           
+           'address' => array('description' => '','type' => 'text','size' => 'normal','default' => ''),
+           'account' => array('description' => '','type' => 'text','size' => 'normal','default' => ''),
+           'english_name' => array('description' => '','type' => 'text','size' => 'normal','default' => ''),
+           'chinese_name' => array('description' => '','type' => 'text','size' => 'normal','default' => ''),
+           'url' => array('description' => '','type' => 'text','size' => 'normal','default' => ''),
+           'logourl' => array('description' => '','type' => 'text','size' => 'normal','default' => ''),
+           'englishdescription' => array('description' => '','type' => 'text','size' => 'normal','default' => ''),
+           'chinesedescription' => array('description' => '','type' => 'text','size' => 'normal','default' => ''),
+           'booth' => array('description' => '','type' => 'text','size' => 'small','default' => ''),
+           'boothplan' => array('description' => '','type' => 'text','size' => 'normal','default' => ''),
+           'electricity' => array('description' => '','type' => 'text','size' => 'small','default' => ''),
+           'wifi' => array('description' => '','type' => 'text','size' => 'small','default' => ''),
+           'requirements' => array('description' => '','type' => 'text','size' => 'normal','default' => ''),
+           'technical_talk' => array('description' => '','type' => 'text','size' => 'small','default' => ''),
+           'speakername' => array('description' => '','type' => 'text','size' => 'normal','default' => ''),
+           'speakertitle' => array('description' => '','type' => 'text','size' => 'normal','default' => ''),
+           'talktitle' => array('description' => '','type' => 'text','size' => 'normal','default' => ''),
+           'talkabstract' => array('description' => '','type' => 'text','size' => 'normal','default' => ''),
+           'passes' => array('description' => '','type' => 'text','size' => 'normal','default' => ''),
+      ),
+   
+      'primary key' => array('id'),
+  );
+  
+  return $schema;
+}
+
+function coscup_sponsorship_install() {
+  drupal_install_schema('coscup_sponsorship');
+}
+
+function coscup_sponsorship_uninstall() {
+  drupal_uninstall_schema('coscup_sponsorship');
+}
+
+?>
