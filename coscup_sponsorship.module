@@ -75,19 +75,18 @@ function sponsorship_form($form, $vid) {
 	  '#prefix' => '<h1>' . t('Sponsorship Fee') . '</h1>',
 	  '#title' => '',
 	  '#description' => 
-	  t('<p>Please wire transfer your sponsor fee to the COSCUP account managed by 歐斯邁德資訊有限公司 and notify sponsorship@coscup.org the account number you used to wire the fee by July 30.</p>') 
-	  . '<p>' . t('The invoice will be issued by 歐斯邁德資訊有限公司.') . '</p>'
+	  t('<p>Please wire transfer your sponsor fee to the COSCUP account managed by 科斯高有限公司 and notify 
+sponsorship@coscup.org the account number you used to wire the fee by July 30.</p>') 
+	  . '<p>' . t('The invoice will be issued by 科斯高有限公司.') . '</p>'
 	  . t('<p>Please be reminded that sponsors within the same level are listed according to the time that the sponsor fee is received. <b>Wiring it earlier gets you a better position.</b></p>')
 	  . t('<p>The COSCUP account is as follows.</p>')
      . t('<p><ul>
-<li>Bank Name: 華南銀行</li> 
-<li>Bank Branch: 東台南分行</li>
-<li>Bank Code: 008</li>
-<li>Back Address: 台南市東區林森路二段90號</li>
-<li>Back Phone Number: +886-6-2747027</li>
+<li>Bank Name: 合作金庫</li> 
+<li>Bank Branch: 南桃園分行</li>
+<li>Bank Code: 006</li>
 
-<li>Account Name: 歐斯邁德資訊有限公司 </li>
-<li>Bank Account Number: 642-10-021455-3</li>
+<li>Account Name: 科斯高有限公司</li>
+<li>Bank Account Number: 1210-871-752158</li>
 <li>SWIFT CODE: </li></ul></p><br>')
      .t('<p>Please fill out the information needed for the invoice below.</p>')
 	  ,
