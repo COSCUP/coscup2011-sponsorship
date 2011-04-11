@@ -246,7 +246,8 @@ sponsorship@coscup.org the account number you used to wire the fee by July 30.</
       t("The COSCUP Program Committee reserves the right to negotiate the topic of your talk or reject your talk.") .
       t("If your talk is unfortunately rejected by the COSCUP Program Committe, we'll have to decline your sponsorship.") .
       "<br /><br />" .
-      t("To unerstand on expectation of our audience, please visit our ") . "<a href=http://wiki.coscup.org/memo-for-speaker-2010>wiki</a>." . "</p><p>".
+      t("To unerstand on expectation of our audience, please visit our ") . "<a 
+href=http://wiki.coscup.org/memo-for-speaker-2011>wiki</a>." . "</p><p>".
       t("If you decide to give a technical talk, please fill the information below:"),
    );
    
