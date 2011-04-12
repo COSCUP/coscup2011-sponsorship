@@ -147,6 +147,9 @@ sponsorship@coscup.org the account number you used to wire the fee.</p>')
 
   $description = '<p>' . t('The logo to be shown on conference web site:') .
   t('The logo should be a EPS/SVG/AI/PDF file, or transparent PNG/TIFF/PSD files with a resolution of 178 pixels wide times 72 pixels high.') . '</p>' .
+  '<p>' . t('e.g., ') . '<img 
+src="http://dl.dropbox.com/u/1069949/coscup2011-sponsorship/coscup-sponsor-logo-example-178px.png">' . 
+'</p>' .
   '<p>' . t('If your company has strict rules on CI, please email us your visual guide.') . '</p>';
   if(strlen($values['logourl']) > 0) {
      $description .= 'Download <a href="/' . $values['logourl'] . '">current file.</a>';
