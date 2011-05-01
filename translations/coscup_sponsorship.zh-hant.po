@@ -77,12 +77,10 @@ msgstr "贊助金額"
 
 #: coscup_sponsorship.module:78
 msgid ""
-"<p>Please wire transfer your sponsor fee to the COSCUP account managed by "
-"科斯高有限公司 and notify sponsorship@coscup.org the account number you "
-"used to wire the fee.</p>"
+"<p>Please wire transfer your sponsor fee to the COSCUP account managed by 科斯高有限公司 and notify 
+sponsorship@coscup.org the account number you used to wire the fee.</p>"
 msgstr ""
-"<p>請電匯您的贊助款給 COSCUP 的代理公司「科斯高有限公司」，並"
-"知會 sponsorship@coscup.org 您的匯款款項。</p>"
+"<p>請電匯您的贊助款給 COSCUP 的代理公司「科斯高有限公司」，並知會 sponsorship@coscup.org 您的匯款款項。</p>"
 
 #: coscup_sponsorship.module:79
 msgid "The invoice will be issued by 科斯高有限公司."
