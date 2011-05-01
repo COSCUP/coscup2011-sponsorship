@@ -86,7 +86,7 @@ function sponsorship_form($form, $vid) {
 
 <li>Account Name: 科斯高有限公司</li>
 <li>Bank Account Number: 1210-871-752158</li>
-<li>SWIFT CODE: </li></ul></p><br>')
+</ul></p><br>')
      .t('<p>Please fill out the information needed for the invoice below.</p>')
 	  ,
 	);
