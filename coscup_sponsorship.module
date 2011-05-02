@@ -455,6 +455,7 @@ function sponsorship_form_submit($form, &$form_state)
 
 	// send an diff email to sponsorship@coscup.org
 	$body = '';
+	$body .= "<html><head></head><body>";
 	$form = $form_state;
 	if (!empty($form['promoption']['boothplan']['#default_value'])) {
 		$form['promoption']['boothplan']['#default_value'] = implode(",", $form['promoption']['boothplan']['#default_value']);
@@ -476,6 +477,8 @@ function sponsorship_form_submit($form, &$form_state)
 	}
 
 	$body .= "See http://sponsor.coscup.org/coscup_sponsorship/form/".$form_state['values']['vid'];
+	$body .= "</body></html>"
+
 	$message = array(
 		'to' => 'sponsorship@coscup.org',
 		'subject' => '[COSCUP][SPONSOR] New update from '.$form_state['values']['name'] .' by user ' . $user->name,
