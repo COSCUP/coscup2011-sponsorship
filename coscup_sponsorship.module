@@ -1,6 +1,19 @@
 <?php
 // $Id$
 
+/**
+* Valid permissions for this module
+* @return array An array of valid permissions for the coscup_sponsorship module
+*/
+function coscup_sponsorship_perm() {
+  return array('access sponsorship content');
+}
+
+function coscup_sponsorship_init() {
+  if (!user_access('access sponsorship content'))
+	die("Bad access");
+}
+
 function coscup_sponsorship_menu() {
   $items = array();
 
