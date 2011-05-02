@@ -421,8 +421,13 @@ function sponsorship_form_validate($form, &$form_state)
 
 /**
  * Form submission for user data.
- * @param form an array that contains user data
- * @param form_state an array that contains user data
+ *
+ * @param $form array
+ *   array of form elements that comprise the form.
+ * @param $form_state array
+ *   A keyed array containing the current state of the form.
+ *
+ * @return void
  */
 function sponsorship_form_submit($form, &$form_state)
 {
