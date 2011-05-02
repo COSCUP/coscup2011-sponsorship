@@ -15,6 +15,22 @@ function coscup_sponsorship_init() {
 }
 
 /**
+ * Display help and module information
+ * @param path which path of the site we're displaying help
+ * @param arg array that holds the current path as would be returned from arg() function
+ * @return help text for the path
+ */
+function coscup_sponsorship_help($path, $arg) {
+    switch ($path) {
+        case "admin/help/coscup_sponsorship":
+        $output = '<p>'.  t("COSCUP Sponsorship Form is a simple form to cllection sponsor's information.") 
+.'</p>';
+            break;
+    }
+    return $output;
+} // function coscup_sponsorship_help
+
+/**
  * Menu for this module
  * @return array An array with this module's settings.
  */
