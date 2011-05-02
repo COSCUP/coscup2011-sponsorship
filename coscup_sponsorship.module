@@ -46,6 +46,20 @@ function coscup_sponsorship_menu()
 	return $items;
 }	// function coscup_sponsorship_menu
 
+/**
+ * Implementation of hook_forms
+ *
+ * @see http://api.drupal.org/api/drupal/developer--hooks--core.php/function/hoo...
+ *
+ * @param $form_id array
+ *   String representing the name of the form itself. Typically this is the 
+ *   name of the function that generated the form.
+ * @param $args array
+ *   An array containing the original arguments provided to drupal_get_form(). 
+ *
+ * @return array
+ *   An array keyed by form id with callbacks and optional, callback arguments.
+ */
 function coscup_sponsorship_form($vid = '')
 {
 	if (strlen($vid) == 0) {
