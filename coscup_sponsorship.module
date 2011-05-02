@@ -28,8 +28,12 @@ function coscup_sponsorship_help($path, $arg)
 }	// function coscup_sponsorship_help
 
 /**
- * Menu for this module
- * @return array An array with this module's settings.
+ * Implementation of hook_menu
+ *
+ * @see http://api.drupal.org/api/function/hook_menu/6
+ *
+ * @return array
+ *   array of menu definitions key by url path
  */
 function coscup_sponsorship_menu()
 {
