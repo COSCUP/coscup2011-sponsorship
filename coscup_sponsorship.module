@@ -336,6 +336,11 @@ href=http://wiki.coscup.org/memo-for-speaker-2011>wiki</a>." . "</p><p>".
 function sponsorship_form_validate($form, &$form_state) {
 }
 
+/**
+ * Form submission for user data.
+ * @param form an array that contains user data
+ * @param form_state an array that contains user data
+ */
 function sponsorship_form_submit($form, &$form_state) {   
    // print_r($form_state['values']);
    // print_r($form_state);
