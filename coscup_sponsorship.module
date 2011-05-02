@@ -407,8 +407,13 @@ function sponsorship_form($form, $vid)
 
 /**
  * Form validation for this module's settings
- * @param form an array that contains this module's settings
- * @param form_state an array that contains this module's settings
+ *
+ * @param $form array
+ *   array of form elements that comprise the form.
+ * @param $form_state array
+ *   A keyed array containing the current state of the form.
+ *
+ * @return void
  */
 function sponsorship_form_validate($form, &$form_state)
 {
