@@ -9,11 +9,6 @@ function coscup_sponsorship_perm() {
   return array('access sponsorship content');
 }
 
-function coscup_sponsorship_init() {
-  if (!user_access('access sponsorship content'))
-	drupal_set_message(t('Please login first or check if you have permission to access this page'));
-}
-
 /**
  * Display help and module information
  * @param path which path of the site we're displaying help
@@ -53,6 +48,11 @@ function coscup_sponsorship_form($vid = '') {
       // TODO send an error.
       die ("Bad acccess");
    }
+
+   if (!user_access('access sponsorship content')) {
+	return t('Please check if you have permission to access this page');
+   }
+
    return drupal_get_form('sponsorship_form', $vid);
 }
 
