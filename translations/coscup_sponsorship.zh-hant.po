@@ -97,7 +97,7 @@ msgstr ""
 
 #: coscup_sponsorship.module:81
 msgid "<p>The COSCUP account is as follows.</p>"
-msgstr "<p>COSCUP 銀行帳號如下<p>"
+msgstr "<p>COSCUP 銀行帳號如下</p>"
 
 #: coscup_sponsorship.module:82
 msgid ""
