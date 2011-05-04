@@ -72,7 +72,7 @@ function coscup_sponsorship_form($vid = '')
 	}
 
 	if (!user_access('access sponsorship content')) {
-		return t('Please check if you have permission to access this page. If you have any problem, please contact sponsorship@coscup.org');
+		return t('Please check if you have permission to access this form. If you have any problem, please contact sponsorship@coscup.org');
 	}
 
 	return drupal_get_form('sponsorship_form', $vid);
