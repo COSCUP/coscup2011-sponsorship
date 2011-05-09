@@ -461,26 +461,84 @@ function sponsorship_form_submit($form, &$form_state)
 		$form['promoption']['boothplan']['#default_value'] = implode(",", $form['promoption']['boothplan']['#default_value']);
 	}
 	if ($values) {
+		$body .= "<ul>";
+
 		foreach($values as $k => $v) {
 			if (!empty($form[$k]) && $form[$k]['#default_value'] != $values[$k]) {
-				$body .= sprintf("* %s changed \n-from %s\n-to %s\n\n", $k, $form[$k]['#default_value'], $values[$k]);
+				$body .= sprintf("<li><b>%s</b> changed <b>from</b> %s <b>to</b> %s</li>", $k, $form[$k]['#default_value'], $values[$k]);
 			}
-			if (!empty($form['fee'][$k])
-				&& ($form['fee'][$k]['#default_value'] != $values[$k])) {
-				$body .= sprintf("* %s changed \n-from %s\n-to %s\n\n", $k, $form['fee'][$k]['#default_value'], $values[$k]);
+			if (!empty($form['fee'][$k]) && ($form['fee'][$k]['#default_value'] != $values[$k])) {
+				$body .= sprintf("<li><b>%s</b> changed <b>from</b> %s <b>to</b> %s</li>", $k, $form['fee'][$k]['#default_value'], $values[$k]);
 			}
 			if (!empty($form['promoption'][$k])
 				&& ($form['promoption'][$k]['#default_value'] != $values[$k])) {
-				$body .= sprintf("* %s changed \n-from %s\n-to %s\n\n", $k, $form['promoption'][$k]['#default_value'], $values[$k]);
+				$body .= sprintf("<li><b>%s</b> changed <b>from</b> %s <b>to</b> %s</li>", $k, $form['promoption'][$k]['#default_value'], $values[$k]);
 			}
 		}
+
+		$body .= "</ul>";
 	}
 
-	$body .= "See http://sponsor.coscup.org/coscup_sponsorship/form/".$form_state['values']['vid'];
-	$body .= "</body></html>"
+	// add table for deploy
+	$body .= "<table border=\"2\">";
+	$body .=
+		"<th>中文名稱</th>" .
+		"<th>等級</th>" .
+		"<th>網站網址</th>" .
+		"<th>Logo 網址</th>" .
+		"<th>中文敘述</th>" .
+		"<th>英文名稱</th>" .
+		"<th>英文敘述</th><tr>";
+
+	if ($form['promoption']['chinese_name']['#default_value'] != $values['chinese_name']) {
+		$body .= "<td bgcolor=\"red\">" . $values['chinese_name'] . "</td>";
+	} else {
+		$body .= "<td>" . $form['promoption']['chinese_name']['#default_value'] . "</td>";
+	}
+
+	if ($form['level']['#default_value'] != $values['level']) {
+		$body .= "<td bgcolor=\"red\">" . $values['level'] . "</td>";
+	} else {
+		$body .= "<td>" . $form['level']['#default_value'] . "</td>";
+	}
+
+	if ($form['promoption']['url']['#default_value'] != $values['url']) {
+		$body .= "<td bgcolor=\"red\">" . $values['promoption']['url'] . "</td>";
+	} else {
+		$body .= "<td>" . $form['promoption']['url']['#default_value'] . "</td>";
+	}
+
+	if ($form['logourl']['#default_value'] != $values['logourl']) {
+		$body .= "<td bgcolor=\"red\">" . $values['logourl'] . "</td>";
+	} else {
+		$body .= "<td>" . $form['logourl']['#default_value']['#default_value'] . "</td>";
+	}
+
+	if ($form['promoption']['chinesedescription']['#default_value'] != $values['chinesedescription']) {
+		$body .= "<td bgcolor=\"red\">" . $values['chinesedescription'] . "</td>";
+	} else {
+		$body .= "<td>" . $form['promoption']['chinesedescription']['#default_value'] . "</td>";
+	}
+
+	if ($form['promoption']['english_name']['#default_value'] != $values['english_name']) {
+		$body .= "<td bgcolor=\"red\">" . $values['english_name'] . "</td>";
+	} else {
+		$body .= "<td>" . $form['promoption']['english_name']['#default_value'] . "</td>";
+	}
+
+	if ($form['promoption']['englishdescription']['#default_value'] != $values['englishdescription']) {
+		$body .= "<td bgcolor=\"red\">" . $values['englishdescription'] . "</td>";
+	} else {
+		$body .= "<td>" . $form['promoption']['englishdescription']['#default_value'] . "</td>";
+	}
+
+	$body .= "</tr></table>";
+
+	$body .= "<p>See http://sponsor.coscup.org/coscup_sponsorship/form/" . $form_state['values']['vid'] . "</p>";
+	$body .= "</body></html>";
 
 	$message = array(
-		'to' => 'sponsorship@coscup.org',
+		'to' => 'yrchen@atcity.org',
 		'subject' => '[COSCUP][SPONSOR] New update from '.$form_state['values']['name'] .' by user ' . $user->name,
 		'body' => $body,
 		'headers' => array(
