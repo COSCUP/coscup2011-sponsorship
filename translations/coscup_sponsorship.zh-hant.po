@@ -407,4 +407,4 @@ msgstr "COSCUP 贊助者表單"
 
 #: coscup_sponsorship.info:0
 msgid "A simple form to cllection sponsor's information."
-msgstr "蒐集贊者者資訊用的表單"
+msgstr "蒐集贊助者資訊用的表單"
