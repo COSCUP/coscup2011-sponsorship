@@ -246,7 +246,7 @@ function sponsorship_form($form, $vid)
 		'#title' => t('English Description'),
 		'#description' => 
 			'<p>' .
-			t('An text in English to describe your company profile, up to 500 characters.') .
+			t('An text in English to describe your company profile, up to 500 words.') .
 			"</p>",
 		'#type' => 'textarea',
 	);
@@ -367,7 +367,7 @@ function sponsorship_form($form, $vid)
 	$form['talkabstract'] = array(
 		'#type' => 'textarea',
 		'#title' => t('Abstract of the talk'),
-		'#description' => t('up to 500 characters in either English or Chinese'),
+		'#description' => t('up to 500 words in either English or Chinese'),
 		'#weight' => 53,
 	);
 

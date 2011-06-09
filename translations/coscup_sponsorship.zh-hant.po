@@ -210,7 +210,7 @@ msgstr "英文說明"
 
 #: coscup_sponsorship.module:158
 msgid ""
-"An text in English to describe your company profile, up to 500 characters."
+"An text in English to describe your company profile, up to 500 words."
 msgstr "五百字內，英文公司基本簡介"
 
 #: coscup_sponsorship.module:163
@@ -371,7 +371,7 @@ msgid "Abstract of the talk"
 msgstr "演講摘要"
 
 #: coscup_sponsorship.module:258
-msgid "up to 500 characters in either English or Chinese"
+msgid "up to 500 words in either English or Chinese"
 msgstr "500字 以上，中英文撰寫皆可。"
 
 #: coscup_sponsorship.module:263
